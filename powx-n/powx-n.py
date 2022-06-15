@@ -10,4 +10,4 @@ class Solution:
         
         
         res = helper(x,abs(n))
-        return 1/res if n <= 0 else res
+        return 1/res if n < 0 else res
