@@ -1,5 +1,11 @@
 class Solution:
     def findClosestElements(self, arr: List[int], k: int, x: int) -> List[int]:
+        """
+        work with these examples on paper 
+        
+        example (i) - arr = [1,2,3,4,5,6,7,8] , k = 4, x = 3
+                (ii) - arr = [1,2,3,4,5,6,7,8] ,  k = 3, x = 6 
+        """
         l , r = 0 , len(arr)-k
         while l<r:
             mid = (l+r)//2
@@ -8,6 +14,8 @@ class Solution:
             else:
                 r = mid
         return arr[l:l+k]
+    
+    
         # if len(arr) == k:
         #     return arr
         # l, r = 0, len(arr)-1
