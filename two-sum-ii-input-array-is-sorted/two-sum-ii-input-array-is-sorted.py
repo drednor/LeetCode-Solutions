@@ -8,7 +8,7 @@ class Solution:
                 i+=1
             else:
                 return [i+1,j+1]
-        
+        return []
         # SAME SOLUTION AS TWO SUM 1
         # somemap = {}
         # for i, n in enumerate(numbers):
