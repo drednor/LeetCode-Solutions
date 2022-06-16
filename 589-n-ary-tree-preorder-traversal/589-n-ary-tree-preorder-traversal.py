@@ -10,13 +10,22 @@ class Node:
 class Solution:
     def preorder(self, root: 'Node') -> List[int]:
         # RECURSIVE SOULTION
+        
         def helper(root,result):
-            if root:
-                result.append(root.val)
-                for child in root.children:
-                    helper(child, result)
+            if root is None:
+                return None
+            result.append(root.val)
+            for child in root.children:
+                helper(child, result)
             return result
-        return helper(root,[])
+        return helper(root, [])
+        # def helper(root,result):
+        #     if root:
+        #         result.append(root.val)
+        #         for child in root.children:
+        #             helper(child, result)
+        #     return result
+        # return helper(root,[])
         
         # ITERATIVE SOLUTION
         # if root is None:
