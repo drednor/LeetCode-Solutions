@@ -9,21 +9,25 @@ class Node:
 
 class Solution:
     def preorder(self, root: 'Node') -> List[int]:
-        if root is None:
-            return None
+        # RECURSIVE SOULTION
+        def helper(root,result):
+            if root:
+                result.append(root.val)
+                for child in root.children:
+                    helper(child, result)
+            return result
+        return helper(root,[])
         
-        output = []
-        stack = [root]
-        
-        
-        
-        while stack:
-            temp = stack.pop()
-
-            output.append(temp.val)
-
-            stack.extend(temp.children[::-1])
-        return output
+        # ITERATIVE SOLUTION
+        # if root is None:
+        #     return None
+        # output = []
+        # stack = [root]
+        # while stack:
+        #     temp = stack.pop()
+        #     output.append(temp.val)
+        #     stack.extend(temp.children[::-1])
+        # return output
                 
         
         
