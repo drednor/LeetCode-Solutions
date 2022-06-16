@@ -17,11 +17,13 @@ class Solution:
             bleft = B[j] if j>=0 else float("-infinity")
             bright = B[j+1] if (j+1) < len(B) else float("infinity")
             
+            #partition is correct
             if aleft <= bright and bleft<= aright:
                 #odd
                 if total%2:
                     return min(aright, bright)
                 else:
+                #even
                     return (max(aleft,bleft)+min(aright,bright))/2
             elif aleft>bright:
                 r = i-1
