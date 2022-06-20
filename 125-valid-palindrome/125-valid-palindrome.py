@@ -1,7 +1,23 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        s = re.sub(r'[^a-zA-Z0-9]', '', s).lower()
-        return s==s[::-1]
+        l , r = 0 , len(s)-1
+        while l < r:
+            if not self.isalphanum(s[l]):
+                l+=1
+                continue
+            if not self.isalphanum(s[r]):
+                r-=1
+                continue
+            if s[l].lower() != s[r].lower():
+                return False
+            l +=1
+            r -=1
+        return True
+    
+    def isalphanum(self, c):
+        return (ord("A")<=ord(c)<=ord("Z")) or (ord("a")<=ord(c)<=ord("z")) or (ord("0")<=ord(c)<=ord("9"))
+#         s = re.sub(r'[^a-zA-Z0-9]', '', s).lower()
+#         return s==s[::-1]
         
         
         
