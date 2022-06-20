@@ -1,12 +1,17 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        result = set()
+        res = 0 
         for i in nums:
-            if i in result:
-                result.remove(i)
-            else:
-                result.add(i)
-        return result.pop()
+            res = i ^ res
+        return res
+        
+        # result = set()
+        # for i in nums:
+        #     if i in result:
+        #         result.remove(i)
+        #     else:
+        #         result.add(i)
+        # return result.pop()
         
         
         
