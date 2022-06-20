@@ -11,7 +11,7 @@ class Solution:
                 
             else:
                 stack.append(i)
-        return len(stack) == 0
+        return True if not stack else False
                 
             
         
