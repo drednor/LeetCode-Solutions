@@ -1,5 +1,7 @@
 class Solution:
     def hammingWeight(self, n: int) -> int:
+        # best solution the loop only runs
+        # equal to the number of 1 in the number
         res = 0
         while n:
             n = n & (n-1)
