@@ -17,43 +17,6 @@ class Solution:
         head = prev
         return head
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
 #         if head is None:
 #             return head
 #         cur = head
