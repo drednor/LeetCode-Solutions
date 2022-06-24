@@ -20,32 +20,3 @@ class Solution:
         result.next = list1 or list2
         return dummy.next
                 
-            
-        
-        
-        
-        
-        
-#         if list1 is None and list2 is None:
-#             return None
-#         if list1 is None:
-#             return list2
-#         if list2 is None:
-#             return list1
-#         dummy = result = ListNode(0)
-#         a = list1
-#         b =  list2
-#         while a and b:
-#             if a.val == b.val:
-#                 result.next = a
-#                 a = a.next
-#             elif a.val<b.val:
-#                 result.next = a
-#                 a = a.next
-#             else:
-#                 result.next = b
-#                 b = b.next
-#             result = result.next
-#         result.next = a or b
-        
-#         return dummy.next
