@@ -12,11 +12,11 @@ class Solution:
             max_r[j] = temp
             if temp <= height[j]:
                 temp = height[j]
-        result = []
+        result = 0
         for i in range(len(height)):
             if min(max_l[i],max_r[i]) >= height[i]:
-                result.append(min(max_l[i],max_r[i]) - height[i])
-        return sum(result)
+                result += min(max_l[i],max_r[i]) - height[i]
+        return result
         
             
         
