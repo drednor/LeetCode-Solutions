@@ -4,7 +4,7 @@ class Solution:
         stack =[]
         for p,s in sorted(pair, reverse=True):
             temp = (target - p)/s
-            if stack and stack[-1][0] >= temp:
+            if stack and stack[-1] >= temp:
                 continue
-            stack.append((temp, [p,s]))
+            stack.append(temp)
         return len(stack)
