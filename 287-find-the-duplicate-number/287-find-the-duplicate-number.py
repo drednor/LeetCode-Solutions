@@ -1,18 +1,79 @@
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
+        result = {}
+        for i in nums:
+            result[i] = 1+result[i] if i in result else 1
+            if result[i] > 1:
+                return i
+            
         
-        fast , slow = 0, 0
-        while True:
-            slow = nums[slow]
-            fast = nums[nums[fast]]
-            if slow == fast:
-                break
-        slow2 = 0
-        while True:
-            slow2 = nums[slow2]
-            fast = nums[fast]
-            if slow2 == fast:
-                return slow2
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+#         fast , slow = 0, 0
+#         while True:
+#             slow = nums[slow]
+#             fast = nums[nums[fast]]
+#             if slow == fast:
+#                 break
+#         slow2 = 0
+#         while True:
+#             slow2 = nums[slow2]
+#             fast = nums[fast]
+#             if slow2 == fast:
+#                 return slow2
         
         # # MAKING A HASHMAP AND ADDING VALUE IF VALUE IS ALREADY SEEN
         # tempmap={}
