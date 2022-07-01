@@ -1,10 +1,23 @@
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
-        result = {}
-        for i in nums:
-            result[i] = 1+result[i] if i in result else 1
-            if result[i] > 1:
-                return i
+        slow = fast = 0
+        while True:
+            slow = nums[slow]
+            fast = nums[nums[fast]]
+            if slow == fast:
+                break
+        slow = 0
+        while slow!=fast:
+            slow = nums[slow]
+            fast = nums[fast]
+        return slow
+        
+        
+#         result = {}
+#         for i in nums:
+#             result[i] = 1+result[i] if i in result else 1
+#             if result[i] > 1:
+#                 return i
             
         
         
