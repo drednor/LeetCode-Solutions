@@ -8,25 +8,23 @@ class Node:
 
 class Solution:
     def preorder(self, root: 'Node') -> List[int]:
-        if root is None:
-            return root
-        stack = [root]
-        result = []
-        while stack:
-            cur = stack.pop()
-            result.append(cur.val)
-            stack.extend(cur.children[::-1])
-        return result
-        
-        
+        # if root is None:
+        #     return root
+        # stack = [root]
         # result = []
-        # def recurse(root,result):
-        #     if root:
-        #         result.append(root.val)
-        #         for child in root.children:
-        #             recurse(child, result)
-        #     return result
-        # return recurse(root, [])
+        # while stack:
+        #     cur = stack.pop()
+        #     result.append(cur.val)
+        #     stack.extend(cur.children[::-1])
+        # return result
+        result = []
+        def recurse(root):
+            if root:
+                result.append(root.val)
+                for child in root.children:
+                    recurse(child)
+            return result
+        return recurse(root)
             
         
         
