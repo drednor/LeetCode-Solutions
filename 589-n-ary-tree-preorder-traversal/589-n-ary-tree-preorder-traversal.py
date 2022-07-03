@@ -6,19 +6,74 @@ class Node:
         self.children = children
 """
 
-
 class Solution:
     def preorder(self, root: 'Node') -> List[int]:
-        # RECURSIVE SOULTION
+        if root is None:
+            return root
+        stack = [root]
+        result = []
+        while stack:
+            cur = stack.pop()
+            result.append(cur.val)
+            stack.extend(cur.children[::-1])
+        return result
         
-        def helper(root,result):
-            if root is None:
-                return None
-            result.append(root.val)
-            for child in root.children:
-                helper(child, result)
-            return result
-        return helper(root, [])
+        
+        # result = []
+        # def recurse(root,result):
+        #     if root:
+        #         result.append(root.val)
+        #         for child in root.children:
+        #             recurse(child, result)
+        #     return result
+        # return recurse(root, [])
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        # # RECURSIVE SOULTIOn
         # def helper(root,result):
         #     if root:
         #         result.append(root.val)
