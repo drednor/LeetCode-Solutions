@@ -22,34 +22,6 @@ class Solution:
                 result.append(level)
         return result
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         # q = deque()
         # q.append(root)
         # result = []
