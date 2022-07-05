@@ -10,9 +10,9 @@ class Solution:
         q.append(root)
         result = []
         while q:
-            qlen = len(q)
+            queue_len = len(q)
             level = []
-            for i in range(qlen):
+            for item in range(queue_len):
                 cur = q.popleft()
                 if cur:
                     level.append(cur.val)
@@ -21,4 +21,48 @@ class Solution:
             if level:
                 result.append(level)
         return result
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        # q = deque()
+        # q.append(root)
+        # result = []
+        # while q:
+        #     qlen = len(q)
+        #     level = []
+        #     for i in range(qlen):
+        #         cur = q.popleft()
+        #         if cur:
+        #             level.append(cur.val)
+        #             q.append(cur.left)
+        #             q.append(cur.right)
+        #     if level:
+        #         result.append(level)
+        # return result
             
