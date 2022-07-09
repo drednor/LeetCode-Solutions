@@ -7,7 +7,7 @@ class Solution:
                 return
             char = s[0]
             digit = int(char)
-            if char == "7" or char == "9" or char == "8":
+            if char >= "7":
                 start = (digit-2)*3
                 if char == "8":
                     start += 1
