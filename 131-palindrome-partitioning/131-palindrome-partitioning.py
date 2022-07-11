@@ -3,14 +3,23 @@ class Solution:
         result = []
         def backtrack(i, sub):
             if i >= len(s):
+                #print(sub)
                 result.append(sub)
                 return
             for j in range(i,len(s)):
                 if self.ispal(s[i:j+1]):
+                    #print("current stering = ", s[i:j+1])
                     backtrack(j+1,sub+[s[i:j+1]])
             
         backtrack(0,[])
         return result
         
     def ispal(self, s):
-        return s==s[::-1]
+        l = 0
+        r = len(s)-1
+        while l < r:
+            if s[l] != s[r]:
+                return False
+            l+=1
+            r-=1
+        return True
