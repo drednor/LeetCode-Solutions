@@ -9,7 +9,7 @@ class Solution:
             if i >= len(candidates) or total > target:
                 return 
             num = candidates[i]
-            if num > target:
+            if num+total > target:
                 return
             backtrack(i+1, total + num, sub +[num])
             while i+1 <len(candidates) and candidates[i] == candidates[i+1]:
