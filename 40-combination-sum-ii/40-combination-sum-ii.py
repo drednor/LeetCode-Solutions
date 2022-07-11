@@ -4,8 +4,7 @@ class Solution:
         candidates.sort()
         def backtrack(i, total, sub):
             if total == target:
-                if sub not in result:
-                    result.append(sub)
+                result.append(sub)
                 return
             if i >= len(candidates) or total > target:
                 return 
