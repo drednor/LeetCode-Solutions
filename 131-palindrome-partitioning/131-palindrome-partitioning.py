@@ -3,7 +3,7 @@ class Solution:
         result = []
         def backtrack(i, sub):
             if i >= len(s):
-                result.append(sub.copy())
+                result.append(sub)
                 return
             for j in range(i,len(s)):
                 if self.ispal(s[i:j+1]):
@@ -13,4 +13,4 @@ class Solution:
         return result
         
     def ispal(self, s):
-        return s ==s[::-1]
+        return s==s[::-1]
