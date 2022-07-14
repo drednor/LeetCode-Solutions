@@ -12,10 +12,6 @@ class Solution:
                 return False
             if crs in visited:
                 return True
-            # if graph[crs] == []:
-            #     if crs not in result:
-            #         result.append(crs)
-            #     return True
             cycle.add(crs)
             for pre in graph[crs]:
                 if not dfs(pre):
@@ -24,7 +20,6 @@ class Solution:
             visited.add(crs)
             if crs not in result:
                 result.append(crs)
-            graph[crs] == []
             return True
         
         for crs in range(numCourses):
