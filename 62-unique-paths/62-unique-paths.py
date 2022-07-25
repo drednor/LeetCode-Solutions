@@ -5,62 +5,16 @@ class Solution:
             key = (i,j)
             if key in memo:
                 return memo[key]
-            if i == m-1 and j == n-1:
+            if i == 1 and j == 1:
                 return 1
-            if i > m-1 or j>n-1:
+            if i == 0 or j == 0:
                 return 0
-            memo[key] = recur(i+1,j) + recur(i,j+1)
+            memo[key] = recur(i-1,j) + recur(i,j-1)
             return memo[key]
-        return recur(0,0)
-                
+        return recur(m,n)
+                   
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+  
         
         
         # memo = {}
