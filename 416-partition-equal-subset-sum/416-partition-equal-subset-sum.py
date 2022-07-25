@@ -9,6 +9,8 @@ class Solution:
         for i in range(len(nums)):
             dpcopy = dp.copy()
             for val in dp:
+                if val+nums[i] == target:
+                    return True
                 dpcopy.add(val + nums[i])
             dp = dpcopy
         return True if target in dp else False
