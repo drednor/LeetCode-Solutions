@@ -6,7 +6,7 @@ class Solution:
                 dp[i] = 0
             else:
                 dp[i] = dp[i+1]
-            print(s[i])
+            #print(s[i])
             if i+1<len(s):
                 if s[i] == "1" or s[i] == "2" and s[i+1] in "0123456":
                     #print("inside", s[i],s[i+1])
