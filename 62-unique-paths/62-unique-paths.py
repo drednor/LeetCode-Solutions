@@ -1,17 +1,31 @@
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
-        memo = {}
-        def recur(i,j):
-            key = (i,j)
-            if key in memo:
-                return memo[key]
-            if i == 1 and j == 1:
-                return 1
-            if i == 0 or j == 0:
-                return 0
-            memo[key] = recur(i-1,j) + recur(i,j-1)
-            return memo[key]
-        return recur(m,n)
+        table = [[0]*(m+1) for _ in range(n+1)]
+        table[1][1] = 1
+        for i in range(len(table)):
+            for j in range(len(table[0])):
+                if i+1<len(table):
+                    table[i+1][j] += table[i][j]
+                if j+1<len(table[0]):
+                    table[i][j+1] += table[i][j]
+        return table[-1][-1]
+        
+        
+        
+        
+        
+#         memo = {}
+#         def recur(i,j):
+#             key = (i,j)
+#             if key in memo:
+#                 return memo[key]
+#             if i == 1 and j == 1:
+#                 return 1
+#             if i == 0 or j == 0:
+#                 return 0
+#             memo[key] = recur(i-1,j) + recur(i,j-1)
+#             return memo[key]
+#         return recur(m,n)
                    
         
   
