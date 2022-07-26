@@ -1,15 +1,24 @@
 class Solution:
     def change(self, amount: int, coins: List[int]) -> int:
-        table = [[0]*(amount+1) for _ in range(len(coins)+1)]
-        table[0][0] = 1
-        for j , coin in enumerate(coins):
-            table[j+1][0] = 1
-            for i in range(1,len(table[0])):
-                if i-coin >= 0:
-                    table[j+1][i] = table[j+1][i-coin] + table[j][i]
-                else:
-                    table[j+1][i] += table[j][i]
-        return table[-1][-1]
+        table = [0] * (amount+1)
+        table[0] = 1 
+        for c in coins:
+            for i in range(c, amount+1):
+                table[i] += table[i-c]
+        return table[amount]
+        
+        
+        
+        # table = [[0]*(amount+1) for _ in range(len(coins)+1)]
+        # table[0][0] = 1
+        # for j , coin in enumerate(coins):
+        #     table[j+1][0] = 1
+        #     for i in range(1,len(table[0])):
+        #         if i-coin >= 0:
+        #             table[j+1][i] = table[j+1][i-coin] + table[j][i]
+        #         else:
+        #             table[j+1][i] += table[j][i]
+        # return table[-1][-1]
         
         # memo = {}
         # result = [0]
