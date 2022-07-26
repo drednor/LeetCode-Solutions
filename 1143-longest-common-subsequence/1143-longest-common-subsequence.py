@@ -1,5 +1,6 @@
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
+        
         memo = {}
         def recur(i,j):
             key = (i,j)
