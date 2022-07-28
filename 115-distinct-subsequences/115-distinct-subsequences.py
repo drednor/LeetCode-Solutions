@@ -11,7 +11,7 @@ class Solution:
                 return 0
             res = 0
             if t[j] == s[i]:
-                res += recur(i+1,j+1)
+                res = recur(i+1,j+1)
             res += recur(i+1,j)
             memo[key] = res
             return memo[key]
