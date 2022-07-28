@@ -10,7 +10,7 @@ class Solution:
             if i == len(s):
                 return 0
             res = 0
-            if t[j:].startswith(s[i]):
+            if t[j]==s[i]:
                 res += recur(i+1,j+1,sub + s[i])
             res += recur(i+1,j,sub)
             memo[key] = res
