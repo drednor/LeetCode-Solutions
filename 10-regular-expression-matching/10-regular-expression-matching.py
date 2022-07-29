@@ -3,6 +3,8 @@ class Solution:
         memo = {}
         def recur(i,j):
             key = (i,j)
+            if key in memo:
+                return memo[key]
             if i >= len(s) and j >= len(p):
                 return True
             if j >= len(p):
