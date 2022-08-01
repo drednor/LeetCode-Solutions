@@ -24,57 +24,7 @@ class Solution:
         #     return memo[key]
         # return dfs(m,n)
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         # table = [[0]*(m+1) for _ in range(n+1)]
         # table[1][1] = 1
         # for i in range(len(table)):
