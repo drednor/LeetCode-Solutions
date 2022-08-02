@@ -7,7 +7,6 @@ class Solution:
             for i in range(N):
                 x = bisect_right(matrix[i], m)
                 count+=x
-            print(count)
             return count 
             
         while l < r:
