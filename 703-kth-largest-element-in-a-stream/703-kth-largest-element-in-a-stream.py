@@ -8,6 +8,13 @@ class KthLargest:
             heapq.heappop(self.array)
         
     def add(self, val: int) -> int:
+        heapq.heappush(self.array,val)
+        if len(self.array) > self.k:
+            heapq.heappop(self.array)
+        return self.array[0]
+                
+        
+        
         # l, r  = 0 , len(self.array)-1
         # while l <= r:
         #     mid = (l+r)//2
@@ -21,11 +28,6 @@ class KthLargest:
         # self.array.insert(l, val)
         # # print(self.array)
         # return self.array[len(self.array) - (self.k)]
-        heapq.heappush(self.array,val)
-        if len(self.array) > self.k:
-            heapq.heappop(self.array)
-        return self.array[0]
-                
         # self.array.append(val)
         # self.array.sort(reverse=True)
         # return self.array[self.k-1]
