@@ -4,12 +4,10 @@ class Solution:
         for point in points:
             x, y = point
             temp = (x**2) + (y**2)
-            #heapq.heappush(res, (temp, point))
-            res.append([temp, x, y])
-        heapq.heapify(res)
+            heapq.heappush(res, (temp, point))
         result = []
         while k > 0:
-            temp, x, y = heapq.heappop(res)
-            result.append([x,y])
+            temp, point = heapq.heappop(res)
+            result.append(point)
             k-=1
         return result
