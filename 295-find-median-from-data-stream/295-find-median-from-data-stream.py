@@ -4,7 +4,18 @@ class MedianFinder:
         self.arr = []
 
     def addNum(self, num: int) -> None:
-        pos = bisect_left(self.arr, num)
+        def binarysearch(num):
+            l , r = 0 , len(self.arr)-1
+            while l <= r:
+                mid = (l+r)//2
+                if self.arr[mid] > num:
+                    r = mid -1
+                elif self.arr[mid] < num:
+                    l = mid + 1 
+                else:
+                    return mid
+            return l
+        pos = binarysearch(num)
         self.arr.insert(pos, num)
 
     def findMedian(self) -> float:
