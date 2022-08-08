@@ -1,45 +1,45 @@
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
-        def binarySearch(sub, val):
-            lo, hi = 0, len(sub)-1
-            while(lo <= hi):
-                mid = lo + (hi - lo)//2
-                if sub[mid] < val:
-                    lo = mid + 1
-                elif val < sub[mid]:
-                    hi = mid - 1
-                else:
-                    return mid
-            return lo
-        
-        sub = []
-        for val in nums:
-            pos = binarySearch(sub, val)
-            if pos == len(sub):
-                sub.append(val)
-            else:
-                sub[pos] = val
-        return len(sub)
-        
-#         def binarysearch(num, sub):
-#             l , r = 0, len(sub)-1
-#             while l<=r:
-#                 mid = (l+r)//2
-#                 if sub[mid] < num:
-#                     l = mid+1
-#                 elif num > sub[mid]:
-#                     r = mid -1
+#         def binarySearch(sub, val):
+#             lo, hi = 0, len(sub)-1
+#             while(lo <= hi):
+#                 mid = lo + (hi - lo)//2
+#                 if sub[mid] < val:
+#                     lo = mid + 1
+#                 elif val < sub[mid]:
+#                     hi = mid - 1
 #                 else:
 #                     return mid
-#             return l
-#         table = []
-#         for num in nums:
-#             pos = binarysearch(num, table)
-#             if pos == len(table):
-#                 table.append(num)
+#             return lo
+        
+#         sub = []
+#         for val in nums:
+#             pos = binarySearch(sub, val)
+#             if pos == len(sub):
+#                 sub.append(val)
 #             else:
-#                 table[pos] = num
-#         return len(table)
+#                 sub[pos] = val
+#         return len(sub)
+        
+        def binarysearch(num, sub):
+            l , r = 0, len(sub)-1
+            while l<=r:
+                mid = (l+r)//2
+                if sub[mid] < num:
+                    l = mid+1
+                elif num < sub[mid]:
+                    r = mid -1
+                else:
+                    return mid
+            return l
+        table = []
+        for num in nums:
+            pos = binarysearch(num, table)
+            if pos == len(table):
+                table.append(num)
+            else:
+                table[pos] = num
+        return len(table)
         
         
         
