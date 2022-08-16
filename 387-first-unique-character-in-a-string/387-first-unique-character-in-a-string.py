@@ -7,6 +7,8 @@ class Solution:
                 memo[s[i]] = temp
             else:
                 memo[s[i]][0] += 1
+        
+        
         for val in memo.values():
             x1, x2 = val
             if x1 == 1:
