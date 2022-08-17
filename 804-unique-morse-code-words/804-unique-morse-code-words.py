@@ -11,11 +11,3 @@ class Solution:
                 res.append(temp2)
             temp2 = ""
         return len(res)
-        # result = 1
-        # print(res)
-        # for i in range(len(res)):
-        #     if i+1 < len(res):
-        #         if res[i] != res[i+1]:
-        #             result+=1
-        # return result
-            
