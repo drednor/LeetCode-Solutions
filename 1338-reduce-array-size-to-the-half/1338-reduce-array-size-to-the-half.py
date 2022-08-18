@@ -3,12 +3,10 @@ class Solution:
         memo = {}
         for num in arr:
             memo[num] = 1+ memo[num] if num in memo else 1
-        # print(memo)
         temp = []
         for key, val in memo.items():
             temp.append(val)
         temp.sort(reverse=True)
-        # print(temp)
         res = 0
         total = len(arr)
         for num in temp:
