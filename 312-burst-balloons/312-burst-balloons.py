@@ -8,8 +8,6 @@ class Solution:
                 table[i][j] = max(nums[i]*nums[j]*nums[k] + table[i][k] + table[k][j] for k in range(i+1,j))
         return table[0][len(nums)-1]
         
-        
-        
         # nums = [1] + nums + [1]
         # memo = {}
         # def recur(l,r):
@@ -22,7 +20,7 @@ class Solution:
         #     for i in range(l, r+1):
         #         coin = nums[l-1] *nums[i]*nums[r+1]
         #         coin += recur(l,i-1) + recur(i+1,r)
-        #         print(coin, l , r, i)
+        #         #print(coin, l , r, i)
         #         memo[key] = max(memo[key],coin)
         #     return memo[key]
         # return recur(1,len(nums)-2)
