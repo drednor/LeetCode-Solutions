@@ -17,9 +17,6 @@ class Solution:
             slow = nxt
         rev = prev
         start = head
-        # print(rev.val)
-        # print(start.val)
-        # print(start, rev)
         while start != rev and start and rev:
             if start.val != rev.val:
                 return False
