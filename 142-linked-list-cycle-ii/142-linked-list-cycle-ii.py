@@ -14,7 +14,6 @@ class Solution:
             fast = fast.next.next
             if slow == fast:
                 break
-            
         slow = head
         while slow != fast:
             slow = slow.next
