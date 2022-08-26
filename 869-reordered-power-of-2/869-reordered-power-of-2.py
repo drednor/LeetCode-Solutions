@@ -1,10 +1,8 @@
 class Solution:
     def reorderedPowerOf2(self, n: int) -> bool:
-        top = 1000000000
         i = 1
         c = Counter(str(n))
-        check = []
-        while i <= top:
+        while i <= 10**9:
             temp = Counter(str(i))
             if temp == c:
                 return True
