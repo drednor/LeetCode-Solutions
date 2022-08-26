@@ -9,9 +9,4 @@ class Solution:
             i *= 2
         return False
         
-        # if c in check:
-        #     return True
-        # return False
-        
-        
         
