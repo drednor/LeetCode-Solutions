@@ -16,43 +16,22 @@ class Solution:
                 memo[key] = []
             memo[key].append(cur.val)
             if cur.left:
-                q.append((cur.left, r-1,c+1))
+                q.append((cur.left, r+1,c-1))
             if cur.right:
                 q.append((cur.right, r+1, c+1))
-        #print(memo)
+        cols = defaultdict(list)
         res = []
-        old = float("-inf")
-        for key, val in sorted(memo.items()):
-            if key[0] != old:
-                res.append([])
-            res[-1].extend(sorted(val))
-            old = key[0]
-        #print(res)
+        for x, y in sorted(memo.keys()):
+            cols[y].extend(sorted(memo[(x,y)]))
+        for key in sorted(cols.keys()):
+            res.append(cols[key])
+        
+        # for key, val in sorted(memo.items()):
+        #     if key[0] != old:
+        #         res.append([])
+        #     res[-1].extend(sorted(val))
+        #     old = key[0]
+        # #print(res)
         return res
             
-        # res = []
-        # for key in sorted(memo.keys()):
-        #     res.append(memo[key])
-        # return res
-#         memo = {}
-#         def bfs(node,c):
-#             key = c
-#             if not node:
-#                 return
-#             if key not in memo:
-#                 memo[key] = []
-#             memo[key].append(node.val)
-#             bfs(node.left,c-1)
-#             bfs(node.right,c+1)
-#             return 
         
-#         bfs(root,0)
-#         # print(memo)
-#         res = []
-#         for i in sorted(memo.keys()):
-#             res.append((memo[i]))
-#         return res
-        
-        # for key, val in memo.items():
-        #     res.append([val])
-        # return res
