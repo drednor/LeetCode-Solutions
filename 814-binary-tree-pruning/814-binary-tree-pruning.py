@@ -23,23 +23,4 @@ class Solution:
         if not flag:
             root = None
         return root
-        # def dfs(node):
-        #     if node is None:
-        #         return True
-        #     if node.right is None and node.left is None:
-        #         if node.val == 0:
-        #             return False
-        #         if node.val == 1:
-        #             return True
-        #     left = dfs(node.left)
-        #     right = dfs(node.right)
-        #     if not left:
-        #         node.left = None
-        #     if not right:
-        #         node.right = None
-        #     if node.val == 0 and :
-        #         return False
-        #     if node.val == 1:
-        #         return True
-        # dfs(root)
-        # return root
+        
