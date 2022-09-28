@@ -13,7 +13,6 @@ class Solution:
             total += 1
             cur = cur.next
         cur = head
-        print(total)
         if total == n:
             return head.next
         n = total - n
