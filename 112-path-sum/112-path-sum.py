@@ -8,11 +8,17 @@ class Solution:
     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
         if root is None:
             return False
-        def dfs(node,total):
-            if node is None:
-                return False
-            total += node.val
-            if not node.left and not node.right and total == targetSum:
-                return True
-            return dfs(node.left, total) or dfs(node.right, total)
-        return dfs(root,0)
+        stack = [(root, targetSum-root.val)]
+        while stack:
+            node, target = stack.pop()
+            # print(node.val, target)
+            # print("\n")
+            if not node.left and not node.right:
+                if target == 0:
+                    return True
+            if node.right:
+                stack.append((node.right, target-node.right.val))
+            if node.left:
+                stack.append((node.left, target-node.left.val))
+        return False
+        
