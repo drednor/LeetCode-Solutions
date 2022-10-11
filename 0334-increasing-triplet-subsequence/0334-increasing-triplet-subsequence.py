@@ -1,14 +1,12 @@
 class Solution:
     def increasingTriplet(self, nums: List[int]) -> bool:
-        dp = []
+        low = mid = float("inf")
         for num in nums:
-            index = bisect_left(dp, num)
-            #print(index,dp)
-            if index<len(dp):
-                dp[index] = num
+            if num <= low:
+                low = num
+            elif num <= mid:
+                mid = num
             else:
-                dp.append(num)
-            if len(dp)> 2:
                 return True
         return False
                 
