@@ -47,13 +47,4 @@ class Solution:
             elif num>=1000:
                 res += "M"
                 num -= 1000
-                
-        # for 
-        # print(res)
-        # res = res.replace("IIII","IV").replace("VIIII","IX")
-        # print(res)
-        # res = res.replace("XXXX","XL").replace("LXXXX","XC")
-        # print(res)
-        # res = res.replace("CCCC","CD").replace("DCCCC","CM")
-        # print(res)
         return res
