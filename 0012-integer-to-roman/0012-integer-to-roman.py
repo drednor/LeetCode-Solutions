@@ -1,13 +1,5 @@
 class Solution:
     def intToRoman(self, num: int) -> str:
-        memo = {
-            "IIII":"IV",
-            "VIIII":"IX",
-            "XXXX":"XL",
-            "LXXXX":"XC",
-            "CCCC":"CD",
-            "DCCCC":"CM"
-        }
         res = ""
         while num:
             if num<5:
