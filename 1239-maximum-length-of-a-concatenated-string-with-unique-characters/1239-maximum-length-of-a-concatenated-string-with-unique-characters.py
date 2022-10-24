@@ -10,7 +10,6 @@ class Solution:
                 temp.add(char)
             return False
         
-        
         def backtrack(i):
             if i == len(arr):
                 return len(check)
