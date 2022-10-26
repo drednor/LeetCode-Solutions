@@ -8,7 +8,7 @@ class Solution:
             if r not in remainder:
                 remainder[r] = i
             elif i - remainder[r] > 1:
-                print(total, i , n)
+                #print(total, i , n)
                 return True
         return False
         
