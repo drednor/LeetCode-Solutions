@@ -8,13 +8,20 @@ class Solution:
     def countNodes(self, root: Optional[TreeNode]) -> int:
         if root is None:
             return 0
-        stack = [root]
-        res = 0
-        while stack:
-            node = stack.pop()
-            res+=1
-            if node.left:
-                stack.append(node.left)
-            if node.right:
-                stack.append(node.right)
-        return res
+        def dfsl(node):
+            if node is None:
+                return 0
+            return 1 + dfsl(node.left)
+            
+        def dfsr(node):
+            if node is None:
+                return 0
+            return 1 + dfsr(node.right)
+        
+        l, r = dfsl(root), dfsr(root)
+        
+        if l>r:
+            return 1 + self.countNodes(root.left) + self.countNodes(root.right)
+        else:
+            return (2 ** l) -1
+        
