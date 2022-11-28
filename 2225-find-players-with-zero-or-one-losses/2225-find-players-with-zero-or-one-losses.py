@@ -1,13 +1,28 @@
-from sortedcontainers import SortedDict
 class Solution:
     def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
-        lost = SortedDict()                                  # [1] keeping track of all players
+        winners = {}
+        losers = {}
+        ans = []
+        for w, l in matches:
+            if w not in winners:
+                winners[w] = 0
+            if l not in losers:
+                losers[l] = 0
+            winners[w] += 1
+            losers[l] += 1
+        wins = []
+        oneloss = []
+        for k, v in winners.items():
+            if k not in losers:
+                wins.append(k)
         
-        for w,l in matches: 
-            if w not in lost : lost[w] = 0                   # [2] add player 
-            lost[l] = lost[l] + 1 if l in lost else 1        # [3] increase loss count
+        for k, v in losers.items():
+            if losers[k] == 1:
+                oneloss.append(k)
         
-        zero = [k for k,l in lost.items() if lost[k] == 0]   # [4] filter winners..
-        ones = [k for k,l in lost.items() if lost[k] == 1]   # [5] ...and losers
+        wins.sort()
+        oneloss.sort()
+        ans.append(wins)
+        ans.append(oneloss)
         
-        return [zero, ones]
+        return ans
