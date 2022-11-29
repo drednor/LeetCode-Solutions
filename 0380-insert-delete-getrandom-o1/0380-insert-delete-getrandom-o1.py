@@ -16,8 +16,7 @@ class RandomizedSet:
         return True
 
     def getRandom(self) -> int:
-        val = random.choice(tuple(self.check))
-        return val
+        return random.choice(tuple(self.check))
         
 
 
